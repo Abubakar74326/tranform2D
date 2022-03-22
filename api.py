@@ -56,7 +56,7 @@ def scaling():
     return {'x': x, 'y': y}
 
 #Post method for shering
-@app.route("/shering/", methods=['POST'])
+@app.route("/shearing/", methods=['POST'])
 def shering():
     """
 
