@@ -4,7 +4,7 @@ from code import Transformation
 
 app = Flask(__name__)
 
-
+#post method for rotate
 @app.route("/rotate/", methods=['POST'])
 def rotate():
     x = float(request.form['x'])
