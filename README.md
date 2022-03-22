@@ -18,10 +18,6 @@ install ```Flask 2.0.3```
 #### URL for published documentation:
 https://documenter.getpostman.com/view/20009397/UVsQtPuh
 
-### Pending
-docstring is pending 
-
-ill also use precommit 
 
 
 
