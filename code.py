@@ -12,7 +12,7 @@ class Transformation:
         ynew = y + Ty
         return xnew, ynew
 
-    def scaling(self,x,y,Sx, Sy): # *scal
+    def scaling(self,x,y,Sx, Sy):
         xnew = x * Sx
         ynew = y * Sy
         return xnew, ynew
