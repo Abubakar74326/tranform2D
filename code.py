@@ -65,7 +65,7 @@ class Transformation:
         return xnew, ynew
 
 
-    def scaling(x,y,Sx, Sy):
+    def scaling(self, x,y,Sx, Sy):
         """
         summary line:
         In scaling we modifying or altering the size of objects.
