@@ -1,8 +1,5 @@
 import math
 class Transformation:
-    """
-    this is class whose name is Transformation.
-    """
 
     def rotation(self, x, y, angel):
         """
