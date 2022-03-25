@@ -1,5 +1,29 @@
 import math
+
+import matplotlib.pyplot as plt
+from pylab import imread,imshow,show
+
+
 class Transformation:
+
+    def ploting(self,x,y,xnew,ynew, title_):
+
+        plt.xlim(0, 10)
+        plt.ylim(0, 10)
+
+        plt.grid()
+        plt.title(title_)
+        # st=input("enter the tittle")
+        plt.xlabel("X-Axis")
+        plt.ylabel("Y-Axis")
+        xpoints = [x, xnew]
+        ypoints = [y, ynew]
+
+        plt.plot(xpoints, ypoints, "o")
+        plt.show()
+
+
+
 
     def rotation(self, x, y, angel):
         """
@@ -14,7 +38,7 @@ class Transformation:
         return xnew, ynew
 
 
-    def translation(self,x,y,Tx,Ty):
+    def translation(self,x,y,Tx,Ty,graph=True):
         """
         summary line:
         In 2D translation object moves from one position to another in a two dimensional plane.
@@ -28,9 +52,18 @@ class Transformation:
         """
         xnew = x + Tx
         ynew = y + Ty
-        return xnew, ynew
 
-    def scaling(self,x,y,Sx, Sy):
+        if graph == True:
+            self.ploting(x, y, xnew, ynew, 'translation')
+            plt.savefig('/home/revolution/pictures.png')
+            image = plt.imread('/home/revolution/pictures.png')
+            plt.imshow(image)
+            plt.show()
+        else:
+            return xnew, ynew
+
+
+    def scaling(x,y,Sx, Sy):
         """
         summary line:
         In scaling we modifying or altering the size of objects.
@@ -71,7 +104,11 @@ class Transformation:
 
 
 
-
+if __name__ == "__main__":
+    t = Transformation()
+    t.translation(1,2,5,5)#, graph=False)
+    # print(xnew,ynew)
+    # Transformation.ploting(1, 2, xnew, ynew )
 
 
 
