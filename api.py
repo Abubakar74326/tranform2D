@@ -1,7 +1,6 @@
 from flask import Flask, request
 
 from code import Transformation
-"""import class whose name is Transformaton from code file"""
 
 app = Flask(__name__)
 
@@ -34,7 +33,6 @@ def translation():
     Ty = float(request.form['Ty'])
 
     transformer = Transformation()
-    """object of Transformational class """
     x, y = transformer.translation(x, y, Tx, Ty)
     return {'x': x, 'y': y}
 
@@ -50,9 +48,7 @@ def scaling():
     Sx = float(request.form['Sx'])
     Sy = float(request.form['Sy'])
     transformer = Transformation()
-    """object of Transformation class"""
     x, y = transformer.scaling(x, y, Sx, Sy)
-    """function call"""
     return {'x': x, 'y': y}
 
 #Post method for shering
@@ -73,7 +69,6 @@ def shering():
     """functional call for y coordinate"""
 
     return {'x': x, 'y': y}
-    """return the value of new coordinates of x ,y"""
 
 
 if __name__ == "__main__":
