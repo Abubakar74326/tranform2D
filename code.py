@@ -8,9 +8,6 @@ class Transformation:
 
     def ploting(self,x,y,xnew,ynew, title_):
 
-        plt.xlim(0, 10)
-        plt.ylim(0, 10)
-
         plt.grid()
         plt.title(title_)
         # st=input("enter the tittle")
@@ -20,12 +17,17 @@ class Transformation:
         ypoints = [y, ynew]
 
         plt.plot(xpoints, ypoints, "o")
+        plt.savefig('plot.png')
         plt.show()
 
+        # image = plt.imread('/home/revolution/pictures.png')
+        # plt.imshow(image)
+        # plt.show()
 
 
 
-    def rotation(self, x, y, angel):
+
+    def rotation(self, x, y, angel, graph=True):
         """
 
         :param x: it take the input x coordinates
@@ -35,6 +37,10 @@ class Transformation:
         """
         xnew = ((x * (math.cos(angel))) - (y * (math.sin(angel))))
         ynew = ((y * (math.cos(angel))) + (x * (math.sin(angel))))
+
+        if graph == True:
+            self.ploting(x, y, xnew, ynew, 'rot')
+
         return xnew, ynew
 
 
@@ -55,12 +61,8 @@ class Transformation:
 
         if graph == True:
             self.ploting(x, y, xnew, ynew, 'translation')
-            plt.savefig('/home/revolution/pictures.png')
-            image = plt.imread('/home/revolution/pictures.png')
-            plt.imshow(image)
-            plt.show()
-        else:
-            return xnew, ynew
+
+        return xnew, ynew
 
 
     def scaling(x,y,Sx, Sy):
@@ -106,8 +108,8 @@ class Transformation:
 
 if __name__ == "__main__":
     t = Transformation()
-    t.translation(1,2,5,5)#, graph=False)
-    # print(xnew,ynew)
+    xnew,ynew = t.rotation(1,2,-45, graph=True)
+    print(xnew,ynew)
     # Transformation.ploting(1, 2, xnew, ynew )
 
 
