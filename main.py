@@ -21,4 +21,3 @@ print(a)
 print("shearing new y coordinates")
 b = transformations.sheringY(3,2,1)
 print(b)
-
