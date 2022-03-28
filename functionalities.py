@@ -10,16 +10,17 @@ class Transformation:
 
         plt.grid()
         plt.title(title_)
+
         # st=input("enter the tittle")
         plt.xlabel("X-Axis")
         plt.ylabel("Y-Axis")
         plt.xlim(0,10)
         plt.ylim(0,10)
-        xpoints = [x, xnew]
-        ypoints = [y, ynew]
+        ''' xpoints = [x, xnew]
+        ypoints = [y, ynew]'''
 
-        plt.plot(x, y, "o")
-        plt.plot(xpoints, ypoints, "*")
+        plt.plot(x, y, "o", markersize=10)
+        plt.plot(xnew, ynew, "*", markersize=10)
         # plt.savefig('plot.png')
         plt.show()
 
@@ -39,7 +40,7 @@ class Transformation:
         ynew = ((y * (math.cos(angel))) + (x * (math.sin(angel))))
 
         if graph == True:
-            self.ploting(x, y, xnew, ynew,'rotation')
+            self.ploting(x, y, xnew, ynew,'rotation'+"  Tx=%.2f Ty=%.2f angle =%.2f" % (x, y, angel))
 
         return xnew, ynew
 
@@ -57,9 +58,8 @@ class Transformation:
         """
         xnew = x + Tx
         ynew = y + Ty
-
         if graph == True:
-            self.ploting(x, y, xnew, ynew, 'translation', )
+            self.ploting(x, y, xnew, ynew, 'translation'+"  Tx=%.2f Ty=%.2f" % (Tx, Ty))
         else:
             return xnew, ynew
 
@@ -79,7 +79,7 @@ class Transformation:
         xnew = x * Sx
         ynew = y * Sy
         if graph==True:
-            self.ploting(x,y,Sx,Sy,'Scaling')
+            self.ploting(x,y,Sx,Sy,'Scaling'+"  Sx=%.2f Sy=%.2f" % (Sx, Sy))
         return xnew, ynew
 
 
@@ -91,10 +91,12 @@ class Transformation:
         :param Shy: Shearing parameter towards Y direction
         :return: return New coordinates of the object after shearing
         """
+        xnew = x + (Shx * y)
+        ynew = y + (Shy * x)
         if graph==True:
-            self.ploting(x,y,Shx,Shy, 'Shearing')
-        return y + (Shy * x),x + (Shx * y)
+         self.ploting(x,y,xnew,ynew, 'Shearing'+"  Shx=%.2f Shy=%.2f" % (Shx, Shy))
 
+        return xnew,ynew
 
 if __name__ == "__main__":
     t = Transformation()
