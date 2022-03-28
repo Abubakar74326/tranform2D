@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 
 import transformations
 import visualization
-from code import Transformation
+from functionalities import Transformation
 
 app = Flask(__name__)
 #OBJECT of Class
@@ -57,7 +57,7 @@ def scaling():
     Sx = float(request.form['Sx'])
     Sy = float(request.form['Sy'])
 
-    x, y = transformer.scaling(x, y, Sx, Sy)
+    x, y = transformer.scaling(x, y, Sx, Sy, graph)
     return {'x': x, 'y': y}
 
 
