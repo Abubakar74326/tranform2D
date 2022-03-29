@@ -2,11 +2,9 @@ import math
 
 import matplotlib.pyplot as plt
 from pylab import imread, imshow, show
-
-
 class Transformation:
 
-    def ploting(self, x, y, xnew, ynew, title_):
+    def ploting(self, x, y, xnews, ynews, title_):
 
         plt.grid()
         plt.title(title_)
@@ -20,7 +18,7 @@ class Transformation:
         ypoints = [y, ynew]'''
 
         plt.plot(x, y, "o", markersize=10)
-        plt.plot(xnew, ynew, "*", markersize=10)
+        plt.plot(xnews, ynews, "*", markersize=10)
         # plt.savefig('plot.png')
         plt.show()
 
@@ -98,8 +96,9 @@ class Transformation:
 
         return xnew,ynew
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     t = Transformation()
     xnew, ynew = t.rotation(1, 2, -45, graph=True)
     print(xnew, ynew)
     # Transformation.ploting(1, 2, xnew, ynew )
+'''
