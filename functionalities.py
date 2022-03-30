@@ -4,29 +4,26 @@ import matplotlib.pyplot as plt
 from pylab import imread, imshow, show
 class Transformation:
 
-    def ploting(self, x, y, xnews, ynews, title_):
+    def ploting(self, x, y, xnew, ynew, title_):
 
+       # print(x, y, xnews, ynews, title_)
         plt.grid()
         plt.title(title_)
 
         # st=input("enter the tittle")
         plt.xlabel("X-Axis")
         plt.ylabel("Y-Axis")
-        plt.xlim(0,10)
-        plt.ylim(0,10)
-        ''' xpoints = [x, xnew]
-        ypoints = [y, ynew]'''
-
+        plt.xlim(0,30)
+        plt.ylim(0,30)
         plt.plot(x, y, "o", markersize=10)
-        plt.plot(xnews, ynews, "*", markersize=10)
-        # plt.savefig('plot.png')
+        plt.plot(xnew, ynew, "*", markersize=10)
+
+        plt.savefig('plot.png')
+        # image = plt.imread('plot.png')
+        # plt.imshow(image)
         plt.show()
 
-        # image = plt.imread('/home/revolution/pictures.png')
-        # plt.imshow(image)
-        # plt.show()
-
-    def rotation(self, x, y, angel, graph=True):
+    def rotation(self, x, y, angle, graph = True):
         """
 
         :param x: it take the input x coordinates
@@ -34,15 +31,19 @@ class Transformation:
         :param angel: it tells at which degree object will  rotate
         :return: it returns the new x and y coordinate after rotation transformation
         """
-        xnew = ((x * (math.cos(angel))) - (y * (math.sin(angel))))
-        ynew = ((y * (math.cos(angel))) + (x * (math.sin(angel))))
+        pi = 22/7
+        radian = angle * (pi/180)
+        xnew = ((x * (math.cos(radian))) - (y * (math.sin(radian))))
+        ynew = ((y * (math.cos(radian))) + (x * (math.sin(radian))))
+
+
 
         if graph == True:
-            self.ploting(x, y, xnew, ynew,'rotation'+"  Tx=%.2f Ty=%.2f angle =%.2f" % (x, y, angel))
+            self.ploting(x, y, xnew, ynew,'rotation'+"  x=%.2f y=%.2f angle =%.2f" % (x, y, angle))
 
         return xnew, ynew
 
-    def translation(self, x, y, Tx, Ty, graph=True):
+    def translation(self, x, y, Tx, Ty, graph = False):
         """
         summary line:
         In 2D translation object moves from one position to another in a two dimensional plane.
@@ -57,7 +58,7 @@ class Transformation:
         xnew = x + Tx
         ynew = y + Ty
         if graph == True:
-            self.ploting(x, y, xnew, ynew, 'translation'+"  Tx=%.2f Ty=%.2f" % (Tx, Ty))
+             self.ploting(x, y, xnew, ynew, 'translation'+"  Tx=%.2f Ty=%.2f" % (Tx, Ty))
         else:
             return xnew, ynew
 
@@ -77,7 +78,7 @@ class Transformation:
         xnew = x * Sx
         ynew = y * Sy
         if graph==True:
-            self.ploting(x,y,Sx,Sy,'Scaling'+"  Sx=%.2f Sy=%.2f" % (Sx, Sy))
+            self.ploting(x,y,xnew,ynew,'Scaling'+"  Sx=%.2f Sy=%.2f" % (Sx, Sy))
         return xnew, ynew
 
 
