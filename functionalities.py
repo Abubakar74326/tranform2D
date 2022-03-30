@@ -5,12 +5,8 @@ from pylab import imread, imshow, show
 class Transformation:
 
     def ploting(self, x, y, xnew, ynew, title_):
-
-       # print(x, y, xnews, ynews, title_)
         plt.grid()
         plt.title(title_)
-
-        # st=input("enter the tittle")
         plt.xlabel("X-Axis")
         plt.ylabel("Y-Axis")
         plt.xlim(0,30)
