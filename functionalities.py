@@ -9,8 +9,8 @@ class Transformation:
         plt.title(title_)
         plt.xlabel("X-Axis")
         plt.ylabel("Y-Axis")
-        plt.xlim(0,30)
-        plt.ylim(0,30)
+        # plt.xlim(0,30)
+        # plt.ylim(0,30)
         plt.plot(x, y, "o", markersize=10)
         plt.plot(xnew, ynew, "*", markersize=10)
 
