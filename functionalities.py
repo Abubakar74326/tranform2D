@@ -39,7 +39,7 @@ class Transformation:
 
         return xnew, ynew
 
-    def translation(self, x, y, Tx, Ty, graph = False):
+    def translation(self, x, y, Tx, Ty, graph = True):
         """
         summary line:
         In 2D translation object moves from one position to another in a two dimensional plane.
@@ -73,7 +73,7 @@ class Transformation:
         """
         xnew = x * Sx
         ynew = y * Sy
-        if graph==True:
+        if graph == True:
             self.ploting(x,y,xnew,ynew,'Scaling'+"  Sx=%.2f Sy=%.2f" % (Sx, Sy))
         return xnew, ynew
 
