@@ -12,7 +12,7 @@ def rectangle():
     x = float(request.form['le'])
     y = float(request.form['wi'])
     function_methods.rect(x,y)
-     return send_from
+    return send
 
 
 
