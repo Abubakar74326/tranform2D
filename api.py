@@ -9,13 +9,10 @@ app = Flask(__name__)
 #post method for rotate
 @app.route("/rect")
 def rectangle():
-
     x = float(request.form['le'])
     y = float(request.form['wi'])
-
-
     function_methods.rect(x,y)
-    return
+     return send_from
 
 
 
