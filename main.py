@@ -1,16 +1,14 @@
+
 import transformations
-
-import visualization
 print("translation")
-a, b = transformations.translation(3, 2, 1, 1)
-print ([a,b])
-
+a,b = transformations.translation(3, 2, 1, 1)
+print([a, b])
 print("scaling new coordinates")
 a, b = transformations.scaling(3, 2, 1, 1)
 print([a,b])
 
 print("rotation new coordinates ")
-a,b =transformations.rotation(2,4,30)
+a,b =transformations.rotation(4,4,30)
 print(a,b)
 
 
