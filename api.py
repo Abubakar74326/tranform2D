@@ -26,7 +26,7 @@ def rotate():
     return {'x': x, 'y': y}
 
 
-@app.route("/translations")
+@app.route("/translations", methods = ['POST'])
 def translation():
     """
     #     This function take initial  x,y coordinates an as an input and operation implemented along_with add new coordinates value of tx,ty by translation function calling of class
