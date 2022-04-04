@@ -1,4 +1,4 @@
-# Transformation of 2D coordinates and ploting
+# Transformation of 2D coordinates and get graph images
 ## Table of Content:
 
 General information
