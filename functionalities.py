@@ -93,9 +93,9 @@ class Transformation:
 
         return xnew,ynew
 
-'''if __name__ == "__main__":
-    t = Transformation()
-    xnew, ynew = t.rotation(1, 2, -45, graph=True)
-    print(xnew, ynew)
-    # Transformation.ploting(1, 2, xnew, ynew )
-'''
+if __name__ == "__main__":
+    """testing"""
+    # t = Transformation()
+    # xnew, ynew = t.rotation(4, 4, 30, graph=True)
+    # print(xnew, ynew)
+
