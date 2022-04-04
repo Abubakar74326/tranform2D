@@ -2,12 +2,16 @@ import matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
-from matplotlib.patches import Rectangle
-
-
 
 
 def rec(le,wi):
+    """
+    this function take two input length le,width wi as parameter and return
+    the graph of rectangle
+    :param le: length
+    :param wi: width
+    :return: plot graph of rectangle
+    """
     fig = plt.figure()
     ax = fig.add_subplot()
     rect = matplotlib.patches.Rectangle((0,0), le, wi,color='green')
@@ -18,9 +22,10 @@ def rec(le,wi):
     plt.show()
 
 def tri():
-    #fig =plt.figure()
-    #ax=fig.add_subplot
-
+    """
+    x,y coordinates of triangle
+    :return: plot graph of triangle
+    """
     x = np.array([1, 4, 4, 1])
     y = np.array([1, 1, 3, 1])
     plt.plot(x,y,color='green')
@@ -30,6 +35,11 @@ def tri():
     plt.show()
 
 def cir(radius):
+    """
+    this function take the radius of circle as input and return circle graph
+    :param radius: input radius
+    :return: plot graph of circle
+    """
     fig =plt.figure()
     ax= fig.add_subplot()
     circle = Circle((0,0),radius, color = "green")
@@ -40,6 +50,12 @@ def cir(radius):
     plt.show()
 
 def square(le, wi):
+    """
+    it take length and width as input and return graph of square
+    :param le: length
+    :param wi: width
+    :return: plot square graph
+    """
     fig = plt.figure()
     ax = fig.add_subplot()
     square= matplotlib.patches.Rectangle((1,1), le, wi,color='green')
