@@ -1,5 +1,7 @@
 from flask import Flask, request, render_template
 from flask import Flask, send_from_directory
+
+import functionalities
 from functionalities import Transformation
 
 app = Flask(__name__)
@@ -87,7 +89,7 @@ def shering():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5007, debug=True)
+    app.run(host="127.0.0.2", port=5007, debug=True)
 
 
 #     request_data = request.get_json()
