@@ -89,7 +89,7 @@ def shering():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.2", port=5007, debug=True)
+    app.run(host="127.0.0.4", port=5007, debug=True)
 
 
 #     request_data = request.get_json()
