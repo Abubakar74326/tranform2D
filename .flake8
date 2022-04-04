@@ -2,3 +2,4 @@
 max-line-length = 80
 
 #exclude = app/core/api.py,  # No need to check api demonstration (some variables are not used)
+
