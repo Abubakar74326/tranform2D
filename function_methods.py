@@ -21,18 +21,23 @@ def rec(le,wi):
     plt.savefig('plot.png')
     plt.show()
 
-def tri():
+def tri(x,y):
     """
     x,y coordinates of triangle
     :return: plot graph of triangle
     """
-    x = np.array([1, 4, 4, 1])
-    y = np.array([1, 1, 3, 1])
-    plt.plot(x,y,color='green')
-    plt.savefig('plot.png')
-    plt.xlim([0, 10])
-    plt.ylim([0, 10])
-    plt.show()
+    # x = np.array([1, 4, 4, 1])
+    # y = np.array([1, 1, 3, 1])
+    if len(x)==4 and len(y)==4:
+        a = np.array(x)
+        b = np.array(y)
+        plt.plot(a,b,color='green')
+        plt.savefig('plot.png')
+        plt.xlim([0, 10])
+        plt.ylim([0, 10])
+        plt.show()
+    else:
+        print()
 
 def cir(radius):
     """
@@ -65,4 +70,5 @@ def square(le, wi):
     plt.savefig('plot.png')
     plt.show()
 
-#if __name__ == "__main__":
+if __name__ == "__main__":
+    tri([1,4,4,1],[1,1,3,1])

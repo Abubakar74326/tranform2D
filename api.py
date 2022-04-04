@@ -22,7 +22,19 @@ def triangle():
     call the triangle function from function_method file
     :return: plot the  image graph save in current directory
     """
-    function_methods.tri()
+    a = float(request.form['a'])
+    b = float(request.form['b'])
+    c = float(request.form['c'])
+    d = float(request.form['d'])
+    e = float(request.form['e'])
+    f= float(request.form['f'])
+    g = float(request.form['g'])
+    h = float(request.form['h'])
+
+    x=[a,b,c,d]
+    y=[e,f,g,h]
+
+    function_methods.tri(x,y)
     return send_from_directory('.', 'plot.png')
 
 @app.route("/circle")
