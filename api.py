@@ -1,12 +1,12 @@
 from flask import Flask, request, render_template
 from flask import Flask, send_from_directory
 from functionalities import Transformation
-# import visualization
+
 app = Flask(__name__)
-#OBJECT of Class
+
 transformer = Transformation()
-# post method for rotate
-@app.route("/rotate/")
+
+@app.route("/rotate")
 def rotate():
 
     """
@@ -26,11 +26,10 @@ def rotate():
     return {'x': x, 'y': y}
 
 
-# Post method for translational
 @app.route("/translations")
 def translation():
     """
-    #     This function take initial  x,y coordinates an as an input and operation implemented along_with add new coordinates value of Tx,Ty by translation function calling of class
+    #     This function take initial  x,y coordinates an as an input and operation implemented along_with add new coordinates value of tx,ty by translation function calling of class
     #     Transformation and return the new x,y coordinates.
     #     :return: it return new coordinates of object after translation
     #     """
@@ -38,7 +37,7 @@ def translation():
     y = float(request.form['y'])
     tx = float(request.form['tx'])
     ty = float(request.form['ty'])
-    graph= eval(request.form['graph'])
+    graph = eval(request.form['graph'])
     if graph == True:
         transformer.translation(x, y, tx, ty, graph)
         return send_from_directory('.', 'plot.png')
@@ -47,10 +46,6 @@ def translation():
         return {'x': xnew, 'y': ynew}
 
 
-
-
-
-# Post method for scaling
 @app.route("/scaling")
 def scaling():
     """
@@ -62,17 +57,14 @@ def scaling():
     y = float(request.form['y'])
     Sx = float(request.form['Sx'])
     Sy = float(request.form['Sy'])
-    graph =eval(request.form['graph'])
+    graph = eval(request.form['graph'])
     if graph == True:
         transformer.scaling(x, y, Sx, Sy,graph)
         return send_from_directory('.', 'plot.png')
     else:
         transformer.scaling(x,y,Sx,Sy,graph)
     return {'x': x, 'y': y}
-#
-#
-# # Post method for shering
-# @app.route("/shering/<graph= True>", methods=['POST','GET'])
+
 @app.route("/shering")
 def shering():
 
@@ -94,34 +86,10 @@ def shering():
     return {'x': xnew, 'y': ynew}
 
 
-
-'''#ploting function
-@app.route('/plot_translation/')
-def plot():
-    """
-     this is self practice to take the translation graph as an output from ploting function of visualization file by api
-    :return:
-    """
-    x = float(request.form['x'])
-    y = float(request.form['y'])
-    Tx = float(request.form['Tx'])
-    Ty = float(request.form['Ty'])
-    xnew, ynew = transformer.translation(x, y, Tx, Ty)
-    
-    
-    
-    plot, url = visualization.ploting(x, y, xnew,ynew)
-    return render_template(plot, plot_url=url)
-#
-# '''
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=5007, debug=True)
 
 
-
-#     """
-#     This function take initial  x,y coordinates an as an input and operation implemented along_with add new coordinates value of Tx,Ty by translation function calling of class
-#     Transformation and return the new x,y coordinates.
-#     :return: it return new coordinates of object after translation
-#     """
 #     request_data = request.get_json()
 #     x = request_data['x']
 #     y = request_data['y']
@@ -135,5 +103,4 @@ def plot():
 #            return xnew, ynew
 #
 #     return {"x":x, "y":y}
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5007, debug=True)
+
