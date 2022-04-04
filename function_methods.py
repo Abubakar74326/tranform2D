@@ -39,7 +39,7 @@ def cir(radius):
     plt.savefig('plot.png')
     plt.show()
 
-def square(le,wi):
+def square(le, wi):
     fig = plt.figure()
     ax = fig.add_subplot()
     square= matplotlib.patches.Rectangle((1,1), le, wi,color='green')
@@ -49,7 +49,4 @@ def square(le,wi):
     plt.savefig('plot.png')
     plt.show()
 
-square(3,3)
-#cir(2)
-# tri()
-#rec(2,3)
+#if __name__ == "__main__":
