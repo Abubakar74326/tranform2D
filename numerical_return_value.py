@@ -1,21 +1,20 @@
-
 import transformations
+
 print("translation")
-a,b = transformations.translation(3, 2, 1, 1)
+a, b = transformations.translation(3, 2, 1, 1)
 print([a, b])
 print("scaling new coordinates")
 a, b = transformations.scaling(3, 2, 1, 1)
-print([a,b])
+print([a, b])
 
 print("rotation new coordinates ")
-a,b =transformations.rotation(4,4,30)
-print(a,b)
-
+a, b = transformations.rotation(4, 4, 30)
+print(a, b)
 
 
 print("shearing new x coordinates")
-a = transformations.sheringX(3,2,1)
+a = transformations.sheringX(3, 2, 1)
 print(a)
 print("shearing new y coordinates")
-b = transformations.sheringY(3,2,1)
+b = transformations.sheringY(3, 2, 1)
 print(b)
