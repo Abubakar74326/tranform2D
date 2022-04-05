@@ -1,9 +1,10 @@
-from flask import Flask, request,send_from_directory
+from flask import Flask, request, send_from_directory
 
 import function_methods
+
 app = Flask(__name__)
 
-#post method for rect
+
 @app.route("/rectangle")
 def rectangle():
     """
@@ -11,10 +12,11 @@ def rectangle():
     take length and width from user
     :return: plot the  image graph save in current directory
     """
-    le = float(request.form['le'])
-    wi = float(request.form['wi'])
-    function_methods.rec(le,wi)
-    return send_from_directory('.','plot.png')
+    le = float(request.form["le"])
+    wi = float(request.form["wi"])
+    function_methods.rec(le, wi)
+    return send_from_directory(".", "plot.png")
+
 
 @app.route("/triangle")
 def triangle():
@@ -22,20 +24,21 @@ def triangle():
     call the triangle function from function_method file
     :return: plot the  image graph save in current directory
     """
-    a = float(request.form['a'])
-    b = float(request.form['b'])
-    c = float(request.form['c'])
-    d = float(request.form['d'])
-    e = float(request.form['e'])
-    f= float(request.form['f'])
-    g = float(request.form['g'])
-    h = float(request.form['h'])
+    a = float(request.form["a"])
+    b = float(request.form["b"])
+    c = float(request.form["c"])
+    d = float(request.form["d"])
+    e = float(request.form["e"])
+    f = float(request.form["f"])
+    g = float(request.form["g"])
+    h = float(request.form["h"])
 
-    x=[a,b,c,d]
-    y=[e,f,g,h]
+    x = [a, b, c, d]
+    y = [e, f, g, h]
 
-    function_methods.tri(x,y)
-    return send_from_directory('.', 'plot.png')
+    function_methods.tri(x, y)
+    return send_from_directory(".", "plot.png")
+
 
 @app.route("/circle")
 def circle():
@@ -44,9 +47,10 @@ def circle():
     take radius from user
     :return: plot the  image graph save in current directory
     """
-    radius = float(request.form['radius'])
+    radius = float(request.form["radius"])
     function_methods.cir(radius)
-    return send_from_directory('.', 'plot.png')
+    return send_from_directory(".", "plot.png")
+
 
 @app.route("/square")
 def square():
@@ -55,12 +59,11 @@ def square():
     take same length and width from user
     :return: plot the  image graph save in current directory
     """
-    le = float(request.form['le'])
-    wi = float(request.form['wi'])
-    function_methods.square(le,wi)
-    return send_from_directory('.','plot.png')
-
+    le = float(request.form["le"])
+    wi = float(request.form["wi"])
+    function_methods.square(le, wi)
+    return send_from_directory(".", "plot.png")
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.3", port=5007, debug=True)
+    app.run(host="127.0.0.7", port=5007, debug=True)
