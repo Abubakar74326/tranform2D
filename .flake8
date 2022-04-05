@@ -1,4 +1,4 @@
 [flake8]
-max-line-length = 90
+max-line-length = 200
 
 #exclude = app/core/api.py,  # No need to check api demonstration (some variables are not used)
