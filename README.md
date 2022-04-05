@@ -11,8 +11,8 @@ length to take graph image of square,and get triangle by
 giving request of triangle in url along coordinates in request body and get graph image in response.
 
 ### Getting started:
+To get this project locally run the following:  
 
-    To get this project in running locally first create following.
 install ```Python 3.8.10```
 
 install ```Flask 2.0.3```
