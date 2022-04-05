@@ -32,10 +32,13 @@ def triangle():
     f = float(request.form["f"])
     g = float(request.form["g"])
     h = float(request.form["h"])
-
+    """values pass to 2D Coordinates"""
+    # x = [a, b, c, d]
+    # x = [1, 4, 4, 1]
+    # y = [e, f, g, h]
+    # y = [1, 1, 3, 1]
     x = [a, b, c, d]
     y = [e, f, g, h]
-
     function_methods.tri(x, y)
     return send_from_directory(".", "plot.png")
 
@@ -60,8 +63,7 @@ def square():
     :return: plot the  image graph save in current directory
     """
     le = float(request.form["le"])
-    wi = float(request.form["wi"])
-    function_methods.square(le, wi)
+    function_methods.square(le)
     return send_from_directory(".", "plot.png")
 
 
