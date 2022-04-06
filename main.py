@@ -27,18 +27,18 @@ def triangle():
     a = float(request.form["a"])
     b = float(request.form["b"])
     c = float(request.form["c"])
-    d = float(request.form["d"])
     e = float(request.form["e"])
     f = float(request.form["f"])
     g = float(request.form["g"])
-    h = float(request.form["h"])
+    # h = float(request.form["h"])
     """values pass to 2D Coordinates"""
     # x = [a, b, c, d]
     # x = [1, 4, 4, 1]
     # y = [e, f, g, h]
     # y = [1, 1, 3, 1]
-    x = [a, b, c, d]
-    y = [e, f, g, h]
+    x = [a, b, c, a]
+    y = [e, f, g, e]
+
     function_methods.tri(x, y)
     return send_from_directory(".", "plot.png")
 
